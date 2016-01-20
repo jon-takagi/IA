@@ -5,11 +5,7 @@ application up and running.
 
 Things you may want to cover:
 
-<<<<<<< HEAD
 * Ruby version
-=======
-* Ruby version: `ruby 2.2.1p85 (2015-02-26 revision 49769) [x86_64-darwin14]`
->>>>>>> b36507924103054b5ae2258001dc8fb0e59ef7a8
 
 * System dependencies
 

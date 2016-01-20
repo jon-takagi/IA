@@ -13,21 +13,3 @@
  *= require_tree .
  *= require_self
  */
-<<<<<<< HEAD
-=======
-
-.not_started {
-  font-weight: bold;
-  color: red;
-}
-.in_progress {
-
-}
-.need_help {
-  font-style: italic;
-  color: orange;
-}
-.finished {
-  text-decoration: line-through;
-}
->>>>>>> b36507924103054b5ae2258001dc8fb0e59ef7a8
