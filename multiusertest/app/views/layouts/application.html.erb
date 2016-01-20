@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<<<<<<< HEAD
+<head>
+  <title>Multiusertest</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+</body>
+=======
+  <head>
+    <title>Google Auth Example App</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div>
+      <% if current_user %>
+        Signed in as <strong><%= current_user.name %></strong>!
+        <%= link_to "Sign out", signout_path, id: "sign_out" %>
+      <% else %>
+        <%= link_to (t :sign_in_with_google), "/auth/google_oauth2", id: "sign_in" %>
+      <% end %>
+    </div>
+    <div>
+    <%= yield %>
+    </div>
+  </body>
+>>>>>>> b36507924103054b5ae2258001dc8fb0e59ef7a8
+</html>

@@ -1,0 +1,27 @@
+<%= javascript_include_tag 'application' %>
+<%= form_for(@project) do |f| %>
+<% if @project.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+  <ul>
+    <% @project.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
+<div class="field">
+  <%= f.label :name %><br>
+  <%= f.text_field :name %>
+</div>
+<%= f.fields_for :success_conditions do |builder| %><p>
+  <%=builder.label :description, "Description" %>
+  <%=builder.text_field :description %>
+  <%=builder.check_box :_destroy %>
+  <%=builder.label :_destroy, "Remove Condition" %>
+</p>
+<% end %>
+<div class="actions">
+  <%= f.submit %>
+</div>
+<% end %>

@@ -1,0 +1,18 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+<p> Sucess Conditions: </p>
+    <%@connection = ActiveRecord::Base.connection %>
+    <% @query = "SELECT description FROM success_conditions WHERE project_id= #{@project.id};" %>
+    <% @result = @connection.execute(@query) %>
+<ul>
+    <% @result.each do |row| %>
+      <li> <%= row["description"] %> </li>
+    <% end %>
+</ul>
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %>

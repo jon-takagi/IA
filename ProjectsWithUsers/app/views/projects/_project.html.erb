@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @project.name %>
+</p>
+<p> Sucess Conditions: </p>
+<ul>
+  <%for success_condition in @project.success_conditions do %>
+   <li> <%= success_condition.description %> </li>
+  <% end %>
+</ul>
+
+<p> Users: </p>
+<ul>
+  <%for user in @project.users do %>
+   <li> <%= user.name %> </li>
+  <% end %>
+</ul>
+
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+<%= link_to 'Back', projects_path %> |
+<%= link_to 'Destroy', @project.destroy %>
