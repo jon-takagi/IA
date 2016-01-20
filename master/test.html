@@ -1,0 +1,109 @@
+<html><head>
+  <title>Google Auth Example App</title>
+  <link rel="stylesheet" media="all" href="/assets/home.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="true">
+  <link rel="stylesheet" media="all" href="/assets/projects.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="true">
+  <link rel="stylesheet" media="all" href="/assets/scaffolds.self-14cf6a838bd2ab37f6e3841012062a06fec2b7b266e2299df2c47bc68ee2a240.css?body=1" data-turbolinks-track="true">
+  <link rel="stylesheet" media="all" href="/assets/sessions.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" data-turbolinks-track="true">
+  <link rel="stylesheet" media="all" href="/assets/application.self-8d31ed5a604867365b3131d2c4a178d13e1f4803da34d556dfff3fba2584ee56.css?body=1" data-turbolinks-track="true">
+
+  <script src="/assets/jquery.self-a714331225dda820228db323939889f149aec0127aeb06255646b616ba1ca419.js?body=1"></script>
+  <script src="/assets/jquery_ujs.self-d456baa54c1fa6be2ec3711f0a72ddf7a5b2f34a6b4f515f33767d6207b7d4b3.js?body=1"></script>
+  <script src="/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1"></script>
+  <script src="/assets/dynamicForms.self-1b3b752f7bc75fb4b7400ab5376d3d5b83373f0d909872a0f86991d81275c2bd.js?body=1"></script>
+  <script src="/assets/dynamicTasks.self-6546a3a126e8de39fb0f80f7843bfaf2628f361bf4dcc4f475c33eacaf67d142.js?body=1"></script>
+  <script src="/assets/home.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1"></script>
+  <script src="/assets/projects.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1"></script>
+  <script src="/assets/sessions.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1"></script>
+  <script src="/assets/updateTaskStatus.self-1f35f52399060bb1eb0975874c2c26978d33043017a847b2e6aee659e12b8452.js?body=1"></script>
+  <script src="/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1"></script>
+  <meta name="csrf-param" content="authenticity_token">
+  <meta name="csrf-token" content="TzQZPy2XkgxnBi4+ocmFU/iScikCS4NiKOu3wCPu4yCIG3LcLMdOGWBt+UkEmJEUu/nCgE89iB+LnBEp9BkVng==">
+</head>
+<body>
+  <div>
+    Signed in as <strong>Jonathan TAKAGI</strong>!
+    <a id="sign_out" href="/signout">Sign out</a>
+  </div>
+  <div>
+    <h1>New Project</h1>
+
+    <form class="new_project" id="new_project" action="/projects" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="TzQZPy2XkgxnBi4+ocmFU/iScikCS4NiKOu3wCPu4yCIG3LcLMdOGWBt+UkEmJEUu/nCgE89iB+LnBEp9BkVng==">
+
+      <div class="field">
+        <label for="project_name">Name</label><br>
+        <input type="text" name="project[name]" id="project_name">
+      </div>
+      <h3> Success Conditions: </h3>
+      <ul id="conditions">
+
+        <li>
+          <label for="project_success_conditions_attributes_0_description">Description</label>
+          <input type="text" name="project[success_conditions_attributes][0][description]" id="project_success_conditions_attributes_0_description">
+          <input type="hidden" value="false" name="project[success_conditions_attributes][0][_destroy]" id="project_success_conditions_attributes_0__destroy">
+          <a onclick="remove_fields(this)" href="#">remove</a>
+        </li>
+
+        <li>
+          <label for="project_success_conditions_attributes_1_description">Description</label>
+          <input type="text" name="project[success_conditions_attributes][1][description]" id="project_success_conditions_attributes_1_description">
+          <input type="hidden" value="false" name="project[success_conditions_attributes][1][_destroy]" id="project_success_conditions_attributes_1__destroy">
+          <a onclick="remove_fields(this)" href="#">remove</a>
+        </li>
+      </ul>
+      <a onclick="add_fields(this)" href="#">Add Success Conditions</a> <br>
+
+      <h3> Tasks: </h3>
+      <ul id="tasks">
+
+        <li>
+          <label for="project_tasks_attributes_0_description">Description</label>
+          <input type="text" name="project[tasks_attributes][0][description]" id="project_tasks_attributes_0_description">
+          <label for="project_tasks_attributes_0_status">Status</label>
+          <select name="project[tasks_attributes][0][status]" id="project_tasks_attributes_0_status"><option value="not_started">Not started</option>
+            <option value="in_progress">In Progress</option>
+            <option value="need_help">Needs Help</option>
+            <option value="finished">Finished</option></select>
+            <input type="hidden" value="false" name="project[tasks_attributes][0][_destroy]" id="project_tasks_attributes_0__destroy">
+            <a onclick="remove_tasks(this)" href="#">remove</a>
+          </li>
+
+          <li>
+            <label for="project_tasks_attributes_1_description">Description</label>
+            <input type="text" name="project[tasks_attributes][1][description]" id="project_tasks_attributes_1_description">
+            <label for="project_tasks_attributes_1_status">Status</label>
+            <select name="project[tasks_attributes][1][status]" id="project_tasks_attributes_1_status">
+              <option value="not_started">Not started</option>
+              <option value="in_progress">In Progress</option>
+              <option value="need_help">Needs Help</option>
+              <option value="finished">Finished</option>
+            </select>
+            <input type="hidden" value="false" name="project[tasks_attributes][1][_destroy]" id="project_tasks_attributes_1__destroy">
+            <a onclick="remove_tasks(this)" href="#">remove</a>
+          </li> 
+          <li>
+            <label for="project_tasks_description_1448935993645">Description</label>
+            <input type="text" name="project[tasks_attributes][1448935993645][description]" id="project_tasks_description_1448935993645">
+            <label for="project_tasks_status_1448935993645">Status</label>
+            <select name="project[tasks_attributes][1448935993645][status]" id="project_tasks_status_1448935993645">
+              <option value="not_started">Not Started</option>
+              <option value="in_progress"></option>
+              <option value="need_help"></option>
+              <option value="finished"></option>
+            </select>
+            <input name="project[tasks_attributes][1448935993645][_destroy]" type="hidden" id="project_tasks__destroy_1448935993645" value="false">
+            <a href="#">remove</a>
+          </li>
+        </ul>
+        <a onclick="add_tasks(this)" href="#">Add Tasks</a> <br>
+
+        <div class="actions">
+          <input type="submit" name="commit" value="Create Project">
+        </div>
+      </form>
+
+      <a href="/projects">Back</a>
+
+    </div>
+
+
+  </body></html>
